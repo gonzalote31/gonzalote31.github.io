@@ -87,6 +87,26 @@
 			colors: ["#1a3d7c", "#79cef4"],
 			duration: 900
 		});
+		var circleVuejs = Circles.create({
+			id: 'circles-Vuejs',
+			value: 70,
+			radius: 100,
+			number: 70,
+			text: '70%',
+			width: 8,
+			colors: ["#1a3d7c", "#4dba87"],
+			duration: 900
+		});
+		var circleVuetifyjs = Circles.create({
+			id: 'circles-Vuetifyjs',
+			value: 70,
+			radius: 100,
+			number: 70,
+			text: '70%',
+			width: 8,
+			colors: ["#1a3d7c", "#aeddff"],
+			duration: 900
+		});
 		var circlePHP = Circles.create({
 			id: 'circles-PHP',
 			value: 85,
@@ -115,6 +135,16 @@
 			text: '75%',
 			width: 8,
 			colors: ["#1a3d7c", "#ff5623"],
+			duration: 900
+		});
+		var circleWordPress = Circles.create({
+			id: 'circles-WordPress',
+			value: 60,
+			radius: 100,
+			number: 60,
+			text: '60%',
+			width: 8,
+			colors: ["#1a3d7c", "#ffffff"],
 			duration: 900
 		});
 		var circleSwift = Circles.create({
@@ -185,6 +215,16 @@
 			text: '85%',
 			width: 8,
 			colors: ["#1a3d7c", "#00c8ff"],
+			duration: 900
+		});
+		var circleXD = Circles.create({
+			id: 'circles-XD',
+			value: 70,
+			radius: 100,
+			number: 70,
+			text: '70%',
+			width: 8,
+			colors: ["#1a3d7c", "#ff37c1"],
 			duration: 900
 		});
 		// Service Page Client Slider Js

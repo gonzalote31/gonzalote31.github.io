@@ -1102,6 +1102,20 @@ input:focus, textarea:focus, select:focus, button:focus {
     background-repeat: no-repeat;
     background-size: cover;
 }
+#circles-Vuejs {
+	background-image:url(../images/content/logo-vue.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#circles-Vuetifyjs {
+	background-image:url(../images/content/logo-vuetify.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 #circles-PHP {
 	background-image:url(../images/content/logo-php.png);
 	border-radius: 100%;
@@ -1118,6 +1132,13 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 #circles-CodeIgniter {
 	background-image:url(../images/content/logo-codeigniter.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#circles-WordPress {
+	background-image:url(../images/content/logo-wordpress.png);
 	border-radius: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -1167,6 +1188,13 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 #circles-Photoshop {
 	background-image:url(../images/content/logo-photoshop.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#circles-XD {
+	background-image:url(../images/content/logo-xd.png);
 	border-radius: 100%;
     background-position: center;
     background-repeat: no-repeat;
