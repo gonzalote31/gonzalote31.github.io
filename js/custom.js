@@ -15,6 +15,9 @@
 		// bg window height Js
 		var window_height = window.innerHeight;
 		$(".prt_home_wrapper").css("height", window_height);
+		$(window).resize(function() {
+			$(".prt_home_wrapper").css("height", window.innerHeight);
+		});
 		
 		// Portfolio Load More
 		$(".prt_loadmore").slice(0, 3).show();
