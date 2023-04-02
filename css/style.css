@@ -264,7 +264,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 .prt_home_wrapper h1 {
 	position:absolute;
     top:50%;
-	font-size:10vw;
+	font-size:9vw;
 	color: #ffffff;
 	font-weight:bold;
 	-webkit-background-clip: text;
@@ -469,7 +469,7 @@ input:focus, textarea:focus, select:focus, button:focus {
     height: 15px;
     border-radius: 100%;
     border: 3px solid #ffffff;
-    top: 50%;
+    top: 33px;
     right: -22px;
     margin-top: -7px;
 	-webkit-transition: all 0.3s;
@@ -505,7 +505,6 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 .prt_about_learnbox_left .prt_about_learnbox_year {
 	float:right;
-    padding-top: 30px;
 }
 .prt_about_learnbox_year {
     display: table-cell;
@@ -557,11 +556,13 @@ input:focus, textarea:focus, select:focus, button:focus {
 .prt_about_learnbox_info {
     display: table-cell;
     width: calc(100% - 200px);
+    vertical-align: middle;
 }
 .prt_about_learnbox_info h4 {
 	font-size:18px;
 	text-transform:capitalize;
 	margin-top:0px;
+	margin-bottom:0px;
 }
 .prt_about_learnbox_info span {
 	display:inline-block;
@@ -572,6 +573,15 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 .prt_about_learnbox_info p {
 	margin:0px;
+}
+.prt_about_learnbox_info_list_right {
+    direction: rtl;
+}
+.prt_about_learnbox_info_list_left {
+    direction: ltr;
+}
+.prt_about_learnbox_info_list_right li, .prt_about_learnbox_info_list_left li {
+    margin: 20px 0px;
 }
 .prt_about_experience_wrapper {
 	display:inline-block;
@@ -1179,6 +1189,20 @@ input:focus, textarea:focus, select:focus, button:focus {
     background-repeat: no-repeat;
     background-size: cover;
 }
+#circles-Java {
+	background-image:url(../images/content/logo-java.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#circles-Azure {
+	background-image:url(../images/content/logo-azure.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 #circles-Illustrator {
 	background-image:url(../images/content/logo-illustrator.png);
 	border-radius: 100%;
@@ -1452,14 +1476,10 @@ input:focus, textarea:focus, select:focus, button:focus {
         padding-left: 0px;
     }
     .prt_about_learnbox_right:after {
-        top: 0%;
-        left: 0%;
-        margin-top: 0
+        display:none;
     }
     .prt_about_learnbox_left:after {
-        top: 0%;
-        right: 0%;
-        margin-top: 0
+        display:none;
     }
     .prt_about_learnsection:after {
         display:none;
@@ -1485,11 +1505,12 @@ input:focus, textarea:focus, select:focus, button:focus {
     .prt_home_wrapper h1 {
         font-size: 90px;
         margin:0px;
+        text-align: center;
     }
 }
 @media (max-width: 767px) {
     .prt_home_wrapper h1 {
-        font-size: 90px;
+        font-size: 80px;
         margin:0px;
         text-align: center;
     }
@@ -1498,14 +1519,10 @@ input:focus, textarea:focus, select:focus, button:focus {
         margin-bottom: 50px;
     }
     .prt_about_learnbox_right:after {
-        top: 0%;
-        left: 0%;
-        margin-top: 0
+        display:none;
     }
     .prt_about_learnbox_left:after {
-        top: 0%;
-        right: 0%;
-        margin-top: 0
+        display:none;
     }
     .prt_about_learnsection:after {
         display:none;

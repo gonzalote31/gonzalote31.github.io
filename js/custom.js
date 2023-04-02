@@ -172,10 +172,10 @@
 		});
 		var circlePostgreSQL = Circles.create({
 			id: 'circles-PostgreSQL',
-			value: 65,
+			value: 75,
 			radius: 100,
-			number: 65,
-			text: '65%',
+			number: 75,
+			text: '75%',
 			width: 8,
 			colors: ["#1a3d7c", "#326590"],
 			duration: 900
@@ -200,6 +200,26 @@
 			colors: ["#1a3d7c", "#ffffff"],
 			duration: 900
 		});
+		var circleAzure = Circles.create({
+			id: 'circles-Azure',
+			value: 70,
+			radius: 100,
+			number: 70,
+			text: '70%',
+			width: 8,
+			colors: ["#1a3d7c", "#3ccdf7"],
+			duration: 900
+		});
+		var circleJava = Circles.create({
+			id: 'circles-Java',
+			value: 60,
+			radius: 100,
+			number: 60,
+			text: '60%',
+			width: 8,
+			colors: ["#1a3d7c", "#e76f01"],
+			duration: 900
+		});
 		var circleIllustrator = Circles.create({
 			id: 'circles-Illustrator',
 			value: 80,
@@ -222,10 +242,10 @@
 		});
 		var circleXD = Circles.create({
 			id: 'circles-XD',
-			value: 70,
+			value: 75,
 			radius: 100,
-			number: 70,
-			text: '70%',
+			number: 75,
+			text: '75%',
 			width: 8,
 			colors: ["#1a3d7c", "#ff37c1"],
 			duration: 900
