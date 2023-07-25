@@ -52,30 +52,30 @@
 		// Skills Charts
 		var circleHtmlCss = Circles.create({
 			id: 'circles-Html-Css',
-			value: 75,
+			value: 80,
 			radius: 100,
-			number: 75,
-			text: '75%',
+			number: 80,
+			text: '80%',
 			width: 8,
 			colors: ["#1a3d7c", "#f26525"],
 			duration: 900
 		});
 		var circlejs = Circles.create({
 			id: 'circles-JS',
-			value: 80,
+			value: 85,
 			radius: 100,
-			number: 80,
-			text: '80%',
+			number: 85,
+			text: '85%',
 			width: 8,
 			colors: ["#1a3d7c", "#c59828"],
 			duration: 900
 		});
 		var circleb = Circles.create({
 			id: 'circles-B',
-			value: 70,
+			value: 80,
 			radius: 100,
-			number: 70,
-			text: '70%',
+			number: 80,
+			text: '80%',
 			width: 8,
 			colors: ["#1a3d7c", "#564e9f"],
 			duration: 900
@@ -132,40 +132,40 @@
 		});
 		var circleCodeIgniter = Circles.create({
 			id: 'circles-CodeIgniter',
-			value: 75,
+			value: 80,
 			radius: 100,
-			number: 75,
-			text: '75%',
+			number: 80,
+			text: '80%',
 			width: 8,
 			colors: ["#1a3d7c", "#ff5623"],
 			duration: 900
 		});
 		var circleWordPress = Circles.create({
 			id: 'circles-WordPress',
-			value: 60,
+			value: 70,
 			radius: 100,
-			number: 60,
-			text: '60%',
+			number: 70,
+			text: '70%',
 			width: 8,
 			colors: ["#1a3d7c", "#ffffff"],
 			duration: 900
 		});
 		var circleSwift = Circles.create({
 			id: 'circles-Swift',
-			value: 70,
+			value: 75,
 			radius: 100,
-			number: 70,
-			text: '70%',
+			number: 75,
+			text: '75%',
 			width: 8,
 			colors: ["#1a3d7c", "#f47f3c"],
 			duration: 900
 		});
 		var circleMySQL = Circles.create({
 			id: 'circles-MySQL',
-			value: 65,
+			value: 75,
 			radius: 100,
-			number: 65,
-			text: '65%',
+			number: 75,
+			text: '75%',
 			width: 8,
 			colors: ["#1a3d7c", "#cd8b2b"],
 			duration: 900
@@ -182,22 +182,42 @@
 		});
 		var circleGit = Circles.create({
 			id: 'circles-Git',
-			value: 60,
+			value: 75,
 			radius: 100,
-			number: 60,
-			text: '60%',
+			number: 75,
+			text: '75%',
 			width: 8,
 			colors: ["#1a3d7c", "#f05133"],
 			duration: 900
 		});
 		var circleGithub = Circles.create({
 			id: 'circles-Github',
+			value: 80,
+			radius: 100,
+			number: 80,
+			text: '80%',
+			width: 8,
+			colors: ["#1a3d7c", "#ffffff"],
+			duration: 900
+		});
+		var circleJava = Circles.create({
+			id: 'circles-Java',
 			value: 70,
 			radius: 100,
 			number: 70,
 			text: '70%',
 			width: 8,
-			colors: ["#1a3d7c", "#ffffff"],
+			colors: ["#1a3d7c", "#e76f01"],
+			duration: 900
+		});
+		var circlePython = Circles.create({
+			id: 'circles-Python',
+			value: 70,
+			radius: 100,
+			number: 70,
+			text: '70%',
+			width: 8,
+			colors: ["#1a3d7c", "#e2ae34"],
 			duration: 900
 		});
 		var circleAzure = Circles.create({
@@ -210,22 +230,22 @@
 			colors: ["#1a3d7c", "#3ccdf7"],
 			duration: 900
 		});
-		var circleJava = Circles.create({
-			id: 'circles-Java',
-			value: 60,
+		var circleAWS = Circles.create({
+			id: 'circles-AWS',
+			value: 65,
 			radius: 100,
-			number: 60,
-			text: '60%',
+			number: 65,
+			text: '65%',
 			width: 8,
-			colors: ["#1a3d7c", "#e76f01"],
+			colors: ["#1a3d7c", "#fc9608"],
 			duration: 900
 		});
 		var circleIllustrator = Circles.create({
 			id: 'circles-Illustrator',
-			value: 80,
+			value: 85,
 			radius: 100,
-			number: 80,
-			text: '80%',
+			number: 85,
+			text: '85%',
 			width: 8,
 			colors: ["#1a3d7c", "#ff8511"],
 			duration: 900
@@ -242,10 +262,10 @@
 		});
 		var circleXD = Circles.create({
 			id: 'circles-XD',
-			value: 75,
+			value: 80,
 			radius: 100,
-			number: 75,
-			text: '75%',
+			number: 80,
+			text: '80%',
 			width: 8,
 			colors: ["#1a3d7c", "#ff37c1"],
 			duration: 900

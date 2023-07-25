@@ -431,7 +431,7 @@ input:focus, textarea:focus, select:focus, button:focus {
     height: 15px;
     border-radius: 100%;
     border: 3px solid #ffffff;
-    top: 50%;
+    top: 33px;
     left: -22px;
     margin-top: -7px;
 	-webkit-transition: all 0.3s;
@@ -506,6 +506,9 @@ input:focus, textarea:focus, select:focus, button:focus {
 .prt_about_learnbox_left .prt_about_learnbox_year {
 	float:right;
 }
+.prt_about_learnbox_right .prt_about_learnbox_year {
+	float:left;
+}
 .prt_about_learnbox_year {
     display: table-cell;
     width: 200px;
@@ -555,7 +558,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 .prt_about_learnbox_info {
     display: table-cell;
-    width: calc(100% - 200px);
+    width: 63%;
     vertical-align: middle;
 }
 .prt_about_learnbox_info h4 {
@@ -1198,6 +1201,20 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 #circles-Azure {
 	background-image:url(../images/content/logo-azure.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#circles-Python {
+	background-image:url(../images/content/logo-python.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#circles-AWS {
+	background-image:url(../images/content/logo-AWS.png);
 	border-radius: 100%;
     background-position: center;
     background-repeat: no-repeat;
