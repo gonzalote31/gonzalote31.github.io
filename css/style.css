@@ -219,7 +219,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 	text-align:center;
 	text-transform:capitalize;
 	background-color:#f6483b;
-	border:1px solid #f6483b;
+	border: 2px solid #f6483b;
 	-webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
@@ -228,8 +228,8 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 .prt_btn:hover, .prt_btn:focus {
     color: #f6483b;
-    background-color: #1a3d7c;
-	border:1px solid #f6483b;
+    background-color: #ffffff;
+	border: 2px solid #f6483b;
 	-webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
@@ -1199,6 +1199,13 @@ input:focus, textarea:focus, select:focus, button:focus {
     background-repeat: no-repeat;
     background-size: cover;
 }
+#circles-Spring-Boot {
+	background-image:url(../images/content/logo-spring_boot.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 #circles-Azure {
 	background-image:url(../images/content/logo-azure.png);
 	border-radius: 100%;
@@ -1208,6 +1215,20 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 #circles-Python {
 	background-image:url(../images/content/logo-python.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#circles-Nodejs {
+	background-image:url(../images/content/logo-nodejs.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#circles-Docker {
+	background-image:url(../images/content/logo-docker.png);
 	border-radius: 100%;
     background-position: center;
     background-repeat: no-repeat;
