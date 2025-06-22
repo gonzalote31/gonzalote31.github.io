@@ -14,7 +14,7 @@
 /*--------- Body Strat -------*/
 body {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 1.5;
 	color: #b7b7b7;
 	background-color:#1a3d7c;
@@ -1003,7 +1003,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 	width:50%;
 	text-align:center;
 	overflow:hidden;
-	height:175px;
+	height:190px;
 	margin-bottom:30px;
 	cursor:pointer;
 	-webkit-transition: all 0.3s;
@@ -1110,6 +1110,34 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 #circles-jQuery {
 	background-image:url(../images/content/logo-jquery.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#circles-Angular {
+	background-image:url(../images/content/logo-angular.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#circles-Flask {
+	background-image:url(../images/content/logo-flask.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#circles-Flutter {
+	background-image:url(../images/content/logo-flutter.png);
+	border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#circles-Firebase {
+	background-image:url(../images/content/logo-firebase.png);
 	border-radius: 100%;
     background-position: center;
     background-repeat: no-repeat;

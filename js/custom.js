@@ -91,6 +91,46 @@
 			colors: ["#1a3d7c", "#79cef4"],
 			duration: 900
 		});
+		var circleAngular = Circles.create({
+			id: 'circles-Angular',
+			value: 100,
+			radius: 100,
+			number: 100,
+			text: '',
+			width: 8,
+			colors: ["#f40245", "#f40245"],
+			duration: 900
+		});
+		var circleFlask = Circles.create({
+			id: 'circles-Flask',
+			value: 100,
+			radius: 100,
+			number: 100,
+			text: '',
+			width: 8,
+			colors: ["#9fcfe4", "#9fcfe4"],
+			duration: 900
+		});
+		var circleFlutter = Circles.create({
+			id: 'circles-Flutter',
+			value: 100,
+			radius: 100,
+			number: 100,
+			text: '',
+			width: 8,
+			colors: ["#29b6f6", "#29b6f6"],
+			duration: 900
+		});
+		var circleFirebase = Circles.create({
+			id: 'circles-Firebase',
+			value: 100,
+			radius: 100,
+			number: 100,
+			text: '',
+			width: 8,
+			colors: ["#ff9100", "#ff9100"],
+			duration: 900
+		});
 		var circleVuejs = Circles.create({
 			id: 'circles-Vuejs',
 			value: 100,
@@ -321,22 +361,24 @@
 			}
 		});
 		// Portfolio popup Js
-		$('.popup-gallery').magnificPopup({
-			delegate: 'a.imageopen',
-			type: 'image',
-			tLoading: 'Cargando imagen #%curr%...',
-			mainClass: 'mfp-img-mobile',
-			gallery: {
-				enabled: true,
-				navigateByImgClick: true,
-				preload: [0,1]
-			},
-			image: {
-				tError: '<a href="%url%">La imagen #%curr%</a> no se pudo cargar.',
-				titleSrc: function(item) {
-					return item.el.attr('title') + '<small></small>';
+		$('.popup-gallery').each(function() {
+			$(this).magnificPopup({
+				delegate: 'a',
+				type: 'image',
+				tLoading: 'Cargando imagen #%curr%...',
+				mainClass: 'mfp-img-mobile',
+				gallery: {
+					enabled: true,
+					navigateByImgClick: true,
+					preload: [0,1]
+				},
+				image: {
+					tError: '<a href="%url%">La imagen #%curr%</a> no se pudo cargar.',
+					titleSrc: function(item) {
+						return item.el.attr('title') + '<small></small>';
+					}
 				}
-			}
+			});
 		});
 		// Service Page Image Slides Js
 		var ic = 1;
