@@ -26,6 +26,8 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<!-- Favicon Link -->
 	<link rel="shortcut icon" type="image/png" href="images/header/favicon.png">
+	<!-- Cloudflare Turnstile -->
+	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 	<!--Preloader Start-->
@@ -543,6 +545,68 @@
 							</a>
 						</div>
 					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="prt_contact_box">
+							<div class="prt_contact_info">
+								<h1>O escríbeme</h1>
+							</div>
+							<form id="contact-form" class="prt_contact_form" novalidate>
+								<fieldset class="intent-fieldset">
+									<legend class="intent-legend">¿Sobre qué querés hablar?</legend>
+									<div class="intent-chips">
+										<input type="radio" name="intent" id="intent-freelance" value="freelance" class="chip-input" />
+										<label for="intent-freelance" class="chip-label">Proyecto freelance</label>
+										<input type="radio" name="intent" id="intent-trabajo" value="trabajo" class="chip-input" />
+										<label for="intent-trabajo" class="chip-label">Propuesta de trabajo</label>
+										<input type="radio" name="intent" id="intent-colaboracion" value="colaboracion" class="chip-input" />
+										<label for="intent-colaboracion" class="chip-label">Colaboración</label>
+										<input type="radio" name="intent" id="intent-otro" value="otro" class="chip-input" />
+										<label for="intent-otro" class="chip-label">Otro motivo</label>
+									</div>
+								</fieldset>
+								<input type="text" id="name" name="name" placeholder="Tu nombre" required />
+								<input type="email" id="email" name="email" placeholder="Tu correo electrónico" required />
+								<div class="conditional-fields" data-when="freelance" hidden>
+									<select id="budget" name="budget">
+										<option value="" disabled selected>Presupuesto aproximado</option>
+										<option value="menos-500">Menos de USD 500</option>
+										<option value="500-1000">USD 500 – 1.000</option>
+										<option value="1000-3000">USD 1.000 – 3.000</option>
+										<option value="mas-3000">Más de USD 3.000</option>
+										<option value="por-definir">Por definir</option>
+									</select>
+									<select id="timeline" name="timeline">
+										<option value="" disabled selected>¿Cuándo lo necesitás?</option>
+										<option value="urgente">Urgente</option>
+										<option value="este-mes">Este mes</option>
+										<option value="1-3-meses">1 – 3 meses</option>
+										<option value="flexible">Flexible</option>
+									</select>
+								</div>
+								<div class="conditional-fields" data-when="trabajo" hidden>
+									<input type="url" id="linkedin" name="linkedin" placeholder="Link a tu LinkedIn o perfil (opcional)" />
+								</div>
+								<div class="conditional-fields" data-when="otro" hidden>
+									<input type="text" id="subject" name="subject" placeholder="¿Sobre qué querés hablar?" />
+								</div>
+								<textarea id="message" name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+								<div class="cf-turnstile" data-sitekey="0x4AAAAAAFaq1bY8T-eAvFJ9" data-theme="dark"></div>
+								<button type="submit" class="prt_btn">Enviar mensaje</button>
+							</form>
+							<div id="form-status" role="status" aria-live="polite"></div>
+							<div id="form-success" class="contact-success" hidden>
+								<i class="fa fa-check-circle fa-3x" aria-hidden="true"></i>
+								<h3>¡Mensaje enviado!</h3>
+								<p>Te respondo lo antes posible.</p>
+								<p class="success-alternatives">
+									Mientras tanto, también podés escribirme por
+									<a href="mailto:gonzalotapuy_31@hotmail.com">correo</a>
+									o <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/gonzalote31">LinkedIn</a>.
+								</p>
+								<button type="button" class="prt_btn" id="send-another">Enviar otro mensaje</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="prt_footer_wrapper prt_toppadder30 prt_bottompadder30">
@@ -931,5 +995,131 @@
 	<script type="text/javascript" src="js/circles.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
 	<!--Main js file End-->
+	<!--Contact Form Script-->
+	<script type="text/javascript">
+	(function () {
+		var form = document.getElementById("contact-form");
+		var statusDiv = document.getElementById("form-status");
+		var successCard = document.getElementById("form-success");
+		var sendAnotherBtn = document.getElementById("send-another");
+		if (!form) return;
+
+		var conditionalBlocks = form.querySelectorAll(".conditional-fields");
+		var intentRadios = form.querySelectorAll('input[name="intent"]');
+
+		function getSelectedIntent() {
+			var checked = form.querySelector('input[name="intent"]:checked');
+			return checked ? checked.value : "";
+		}
+
+		function clearField(field) {
+			if (field.type === "checkbox" || field.type === "radio") {
+				field.checked = false;
+			} else {
+				field.value = "";
+			}
+		}
+
+		function updateConditionalFields() {
+			var intent = getSelectedIntent();
+			conditionalBlocks.forEach(function (block) {
+				var match = block.getAttribute("data-when") === intent;
+				block.hidden = !match;
+				if (!match) {
+					block.querySelectorAll("input, select, textarea").forEach(clearField);
+				}
+			});
+		}
+
+		intentRadios.forEach(function (radio) {
+			radio.addEventListener("change", updateConditionalFields);
+		});
+
+		form.addEventListener("submit", async function (e) {
+			e.preventDefault();
+
+			var tokenInput = form.querySelector('[name="cf-turnstile-response"]');
+			var token = tokenInput ? tokenInput.value : "";
+
+			if (!token) {
+				statusDiv.textContent = "Por favor, completa la verificación anti-bot.";
+				statusDiv.className = "form-status error";
+				return;
+			}
+
+			var submitBtn = form.querySelector('button[type="submit"]');
+			submitBtn.disabled = true;
+			statusDiv.textContent = "Enviando...";
+			statusDiv.className = "form-status";
+
+			var intent = getSelectedIntent();
+			var payload = {
+				name: form.querySelector("#name").value.trim(),
+				email: form.querySelector("#email").value.trim(),
+				message: form.querySelector("#message").value.trim(),
+				turnstileToken: token,
+				intent: intent || "no_especificado"
+			};
+
+			if (intent === "freelance") {
+				var budget = form.querySelector("#budget").value;
+				var timeline = form.querySelector("#timeline").value;
+				if (budget) payload.budget = budget;
+				if (timeline) payload.timeline = timeline;
+			} else if (intent === "trabajo") {
+				var linkedin = form.querySelector("#linkedin").value.trim();
+				if (linkedin) payload.linkedin = linkedin;
+			} else if (intent === "otro") {
+				var subject = form.querySelector("#subject").value.trim();
+				if (subject) payload.subject = subject;
+			}
+
+			try {
+				var response = await fetch("https://contact-worker.gonzalote31.workers.dev", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(payload)
+				});
+
+				var result = await response.json();
+				if (response.ok) {
+					statusDiv.textContent = "";
+					statusDiv.className = "form-status";
+					form.hidden = true;
+					successCard.hidden = false;
+					form.reset();
+					updateConditionalFields();
+					if (window.turnstile) {
+						turnstile.reset();
+					}
+				} else {
+					statusDiv.textContent = "Error: " + (result.error || "No se pudo enviar el mensaje.");
+					statusDiv.className = "form-status error";
+					if (window.turnstile) {
+						turnstile.reset();
+					}
+				}
+			} catch (err) {
+				statusDiv.textContent = "Ocurrió un error al conectar con el servidor.";
+				statusDiv.className = "form-status error";
+			} finally {
+				submitBtn.disabled = false;
+			}
+		});
+
+		if (sendAnotherBtn) {
+			sendAnotherBtn.addEventListener("click", function () {
+				successCard.hidden = true;
+				form.hidden = false;
+				statusDiv.textContent = "";
+				statusDiv.className = "form-status";
+				var nameField = form.querySelector("#name");
+				if (nameField) {
+					nameField.focus();
+				}
+			});
+		}
+	})();
+	</script>
 </body>
 </html>
